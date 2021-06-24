@@ -44,14 +44,14 @@ pip install einops
 For classification on ImageNet-1K, to train from scratch, run:
 
 ```
-python -m torch.distributed.launch --nproc_per_node <num-of-gpus-to-use>  main.py \ 
+python -m torch.distributed.launch --nproc_per_node 8  main.py \ 
 --cfg <config-file> --data-path <imagenet-path> [--batch-size <batch-size-per-gpu> --output <output-directory>]
 ```
 
 To evaluate, run:
 
 ```
-python -m torch.distributed.launch --nproc_per_node <num-of-gpus-to-use> main.py --eval \
+python -m torch.distributed.launch --nproc_per_node 8 main.py --eval \
 --cfg <config-file> --resume <checkpoint> --data-path <imagenet-path> 
 ```
 
